@@ -3,7 +3,7 @@ A flask / Docker wrapper around the NLP library [Frog](http://languagemachines.g
 
 ## Disclaimer
 
-There is a server included with [Frog](http://languagemachines.github.io/frog/), which should work on it's own, but a had an [issue](https://github.com/proycon/LaMachine/issues/4) with it. This setup comes with the added benefit of an `HTTP / json` interface. The original server is probably much more efficient, and the base Docker image is also not very small, because you can do a lot more with it.
+There is a server included with [Frog](http://languagemachines.github.io/frog/), which should work on it's own, but a had an [issue](https://github.com/proycon/LaMachine/issues/4) with it. This setup comes with the added benefit of an `HTTP / json` interface. The original server is probably much more efficient, and the base Docker image we use here is also not very small, because you can do a lot more with it.
 
 ## Usage
 
@@ -11,7 +11,7 @@ You need `docker-compose` and `docker`. You can start the server with
 
     docker-compose up
 
-and send a text either encoded as "text" in a `json` body. Using `httpie` for example:
+and send a text encoded as "text" in a `json` body. Using `httpie` for example, see below.
 
     $ cat test.json
     {
@@ -22,7 +22,7 @@ and send a text either encoded as "text" in a `json` body. Using `httpie` for ex
 
 Or as `GET` parameter:
 
-    $ http ''<dockerhost>:8080/frog?text=Dit is een test.'
+    $ http '<dockerhost>:8080/frog?text=Dit is een test.'
     HTTP/1.1 200 OK
     Connection: close
     Content-Length: 1084
